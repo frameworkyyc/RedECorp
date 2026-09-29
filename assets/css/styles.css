@@ -241,10 +241,9 @@ a:hover { color: var(--red-dark); }
 .credentials__photos figcaption { font-size: 12px; letter-spacing: 0.18em; color: var(--steel); }
 .taglist small { display: block; margin-top: 4px; font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel); }
 
-/* hot shot hero: truck graphic */
-.page-hero--graphic .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: 24px 32px; }
-.page-hero__text { display: flex; flex-direction: column; gap: 24px; }
-.page-hero__graphic { width: calc(100% + var(--gutter) * 0.5); max-width: none; height: auto; filter: invert(0.94); }
+/* hot shot hero: truck graphic sits on the cream section below */
+.page-hero--graphic .wrap { padding-bottom: 0; gap: 24px; }
+.page-hero__graphic { display: block; width: min(100%, 1180px); max-width: none; height: auto; margin: 16px 0 0 auto; filter: invert(0.94); }
 
 /* responsive */
 @media (max-width: 1080px) {
@@ -253,10 +252,6 @@ a:hover { color: var(--red-dark); }
   .hero__photo { width: 100%; }
   .hero::after, .page-hero--photo::after { background: linear-gradient(90deg, rgba(23,24,26,0.95) 0%, rgba(23,24,26,0.8) 60%, rgba(23,24,26,0.55) 100%); }
   .page-hero__photo { width: 100%; }
-}
-@media (max-width: 860px) {
-  .page-hero--graphic .wrap { grid-template-columns: minmax(0, 1fr); }
-  .page-hero__graphic { width: 100%; }
 }
 @media (max-width: 860px) {
   .credentials__photos, .hero-services, .service-detail .wrap, .equipment .wrap, .contact-page .wrap, .credentials__cols, .facts, .form { grid-template-columns: minmax(0, 1fr); }
@@ -279,6 +274,7 @@ a:hover { color: var(--red-dark); }
   .brand__tag { display: none; }
   .nav .btn { min-height: 44px; padding: 0 16px; font-size: 14px; }
   .page-hero .wrap { padding-top: 64px; padding-bottom: 64px; }
+  .page-hero--graphic .wrap { padding-bottom: 0; }
   .page-hero h1 { font-size: clamp(32px, 10vw, 46px); overflow-wrap: anywhere; }
   .hero__eyebrow { font-size: 11px; letter-spacing: 0.16em; }
   .pillars { grid-template-columns: minmax(0, 1fr); }
