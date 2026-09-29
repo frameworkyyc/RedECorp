@@ -164,7 +164,7 @@ a:hover { color: var(--red-dark); }
 .hero--home .wrap { min-height: calc(100vh - 88px); min-height: calc(100svh - 88px); justify-content: flex-end; gap: 48px; padding-bottom: 64px; }
 .hero--home .hero__photo { width: 100%; }
 .hero--home::after { background: linear-gradient(180deg, rgba(23,24,26,0.35) 0%, rgba(23,24,26,0.55) 45%, rgba(23,24,26,0.94) 100%); }
-.hero-services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--red-on-dark); }
+.hero-services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid var(--red-on-dark); }
 .hero-service { display: flex; flex-direction: column; gap: 10px; padding: 28px 32px 8px 0; text-decoration: none; color: var(--bone); }
 .hero-service + .hero-service { padding-left: 32px; border-left: 1px solid rgba(217,212,203,0.25); }
 .hero-service .label { font-size: 12px; letter-spacing: 0.18em; color: #D9D4CB; }
@@ -274,6 +274,15 @@ a:hover { color: var(--red-dark); }
 .btn--ghost { background: rgba(18,19,21,0.35); color: var(--bone); border: 2px solid var(--bone); }
 .btn--ghost:hover { background: var(--bone); color: var(--charcoal); }
 .landing__foot { position: absolute; left: 0; right: 0; bottom: 24px; margin: 0; font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #A9A49B; }
+
+/* under construction */
+.construction { padding: var(--section) 0; }
+.construction .wrap { display: flex; flex-direction: column; gap: 40px; }
+.construction__bar { height: 22px; background: repeating-linear-gradient(-45deg, var(--red) 0 22px, var(--charcoal) 22px 44px); }
+.construction__body { display: flex; flex-direction: column; gap: 22px; max-width: 720px; }
+.construction__body .label { color: var(--red); }
+.construction__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 20px 32px; margin-top: 12px; }
+.construction__actions a:not(.btn) { font-family: var(--mono); font-size: 14px; letter-spacing: 0.08em; text-decoration: none; }
 
 /* responsive */
 @media (max-width: 1280px) {
