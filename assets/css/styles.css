@@ -230,15 +230,27 @@ a:hover { color: var(--red-dark); }
 .contact-side .label { color: var(--red); }
 .contact-side a { font-family: var(--mono); font-size: 16px; letter-spacing: 0.06em; text-decoration: none; word-break: break-word; }
 
+/* page hero photos */
+.page-hero--photo { position: relative; overflow: hidden; }
+.page-hero__photo { position: absolute; inset: 0 0 0 auto; width: 55%; background-color: var(--photo); background-size: cover; background-repeat: no-repeat; }
+.page-hero--photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--charcoal) 0%, var(--charcoal) 45%, rgba(23,24,26,0.25) 100%); }
+.page-hero--photo .wrap { position: relative; z-index: 1; }
+.credentials__photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.credentials__photos figure { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.credentials__photos img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: var(--photo); }
+.credentials__photos figcaption { font-size: 12px; letter-spacing: 0.18em; color: var(--steel); }
+.taglist small { display: block; margin-top: 4px; font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel); }
+
 /* responsive */
 @media (max-width: 1080px) {
   .nav a:not(.btn) { display: none; }
   .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 40px; }
   .hero__photo { width: 100%; }
-  .hero::after { background: linear-gradient(90deg, rgba(23,24,26,0.95) 0%, rgba(23,24,26,0.8) 60%, rgba(23,24,26,0.55) 100%); }
+  .hero::after, .page-hero--photo::after { background: linear-gradient(90deg, rgba(23,24,26,0.95) 0%, rgba(23,24,26,0.8) 60%, rgba(23,24,26,0.55) 100%); }
+  .page-hero__photo { width: 100%; }
 }
 @media (max-width: 860px) {
-  .hero-services, .service-detail .wrap, .equipment .wrap, .contact-page .wrap, .credentials__cols, .facts, .form { grid-template-columns: minmax(0, 1fr); }
+  .credentials__photos, .hero-services, .service-detail .wrap, .equipment .wrap, .contact-page .wrap, .credentials__cols, .facts, .form { grid-template-columns: minmax(0, 1fr); }
   .hero-service, .hero-service + .hero-service { padding: 20px 0; border-left: 0; border-bottom: 1px solid rgba(217,212,203,0.25); }
   .hero--home .wrap { gap: 32px; padding-bottom: 32px; }
   .facts li, .facts li + li { padding: 24px 0; border-left: 0; border-bottom: 1px solid var(--bone-line); }
