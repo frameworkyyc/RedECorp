@@ -186,6 +186,14 @@ a:hover { color: var(--red-dark); }
 .service-detail__icon svg { width: 48px; height: 48px; }
 .checklist { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--charcoal); }
 .checklist li { padding: 20px 0; border-bottom: 1px solid var(--bone-line); font-family: var(--display); font-weight: 600; font-size: 24px; line-height: 1.2; }
+.equipment { padding: 0 0 var(--section); }
+.equipment .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 80px; align-items: start; }
+.equipment .wrap > div { display: flex; flex-direction: column; gap: 20px; }
+.equipment .label { color: var(--red); }
+.specs { margin: 0; border-top: 2px solid var(--charcoal); }
+.specs > div { display: flex; flex-direction: column; gap: 6px; padding: 20px 0; border-bottom: 1px solid var(--bone-line); }
+.specs dt { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--steel); }
+.specs dd { margin: 0; font-family: var(--display); font-weight: 600; font-size: 24px; line-height: 1.2; }
 .other-services .wrap { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 32px; padding-top: 32px; padding-bottom: 32px; }
 .other-services .label { color: var(--steel); font-size: 12px; letter-spacing: 0.18em; }
 .other-services a { font-family: var(--mono); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
@@ -198,7 +206,7 @@ a:hover { color: var(--red-dark); }
   .hero::after { background: linear-gradient(90deg, rgba(23,24,26,0.95) 0%, rgba(23,24,26,0.8) 60%, rgba(23,24,26,0.55) 100%); }
 }
 @media (max-width: 860px) {
-  .hero-services, .service-detail .wrap { grid-template-columns: minmax(0, 1fr); }
+  .hero-services, .service-detail .wrap, .equipment .wrap { grid-template-columns: minmax(0, 1fr); }
   .hero-service, .hero-service + .hero-service { padding: 20px 0; border-left: 0; border-bottom: 1px solid rgba(217,212,203,0.25); }
   .hero--home .wrap { gap: 32px; padding-bottom: 32px; }
   .service-grid, .project-grid, .about .wrap { grid-template-columns: minmax(0, 1fr); }
