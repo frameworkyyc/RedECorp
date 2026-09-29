@@ -160,6 +160,36 @@ a:hover { color: var(--red-dark); }
 .footer-cols a:hover { color: var(--bone); }
 .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 48px; padding-top: 24px; border-top: 1px solid #2E3135; font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; color: #8E8A83; }
 
+/* home: hero + service options only */
+.hero--home .wrap { min-height: calc(100vh - 88px); min-height: calc(100svh - 88px); justify-content: flex-end; gap: 48px; padding-bottom: 64px; }
+.hero--home .hero__photo { width: 100%; }
+.hero--home::after { background: linear-gradient(180deg, rgba(23,24,26,0.35) 0%, rgba(23,24,26,0.55) 45%, rgba(23,24,26,0.94) 100%); }
+.hero-services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--red-on-dark); }
+.hero-service { display: flex; flex-direction: column; gap: 10px; padding: 28px 32px 8px 0; text-decoration: none; color: var(--bone); }
+.hero-service + .hero-service { padding-left: 32px; border-left: 1px solid rgba(217,212,203,0.25); }
+.hero-service .label { font-size: 12px; letter-spacing: 0.18em; color: #D9D4CB; }
+.hero-service__name { font-family: var(--display); font-weight: 700; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.1; }
+.hero-service__go { font-family: var(--mono); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red-on-dark); }
+.hero-service:hover .hero-service__go, .hero-service:focus-visible .hero-service__go { color: var(--bone); }
+
+/* service pages */
+.nav a[aria-current="page"] { color: var(--bone); border-bottom: 2px solid var(--red-on-dark); padding-bottom: 4px; }
+.page-hero { background: var(--charcoal); }
+.page-hero .wrap { display: flex; flex-direction: column; gap: 24px; padding-top: 96px; padding-bottom: 96px; }
+.page-hero .label { color: #D9D4CB; }
+.page-hero h1 { font-family: var(--display); font-weight: 900; font-size: clamp(46px, 6vw, 80px); line-height: 1; text-transform: uppercase; color: var(--bone); }
+.page-hero p:not(.label) { max-width: 640px; font-size: 19px; color: var(--text-on-dark); }
+.service-detail { padding: var(--section) 0; }
+.service-detail .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 80px; align-items: start; }
+.service-detail .wrap > div:nth-child(2) { display: flex; flex-direction: column; gap: 20px; }
+.service-detail__icon { grid-column: 1 / -1; }
+.service-detail__icon svg { width: 48px; height: 48px; }
+.checklist { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--charcoal); }
+.checklist li { padding: 20px 0; border-bottom: 1px solid var(--bone-line); font-family: var(--display); font-weight: 600; font-size: 24px; line-height: 1.2; }
+.other-services .wrap { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 32px; padding-top: 32px; padding-bottom: 32px; }
+.other-services .label { color: var(--steel); font-size: 12px; letter-spacing: 0.18em; }
+.other-services a { font-family: var(--mono); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
+
 /* responsive */
 @media (max-width: 1080px) {
   .nav a:not(.btn) { display: none; }
@@ -168,6 +198,9 @@ a:hover { color: var(--red-dark); }
   .hero::after { background: linear-gradient(90deg, rgba(23,24,26,0.95) 0%, rgba(23,24,26,0.8) 60%, rgba(23,24,26,0.55) 100%); }
 }
 @media (max-width: 860px) {
+  .hero-services, .service-detail .wrap { grid-template-columns: minmax(0, 1fr); }
+  .hero-service, .hero-service + .hero-service { padding: 20px 0; border-left: 0; border-bottom: 1px solid rgba(217,212,203,0.25); }
+  .hero--home .wrap { gap: 32px; padding-bottom: 32px; }
   .service-grid, .project-grid, .about .wrap { grid-template-columns: minmax(0, 1fr); }
   .service, .service:first-child, .service:last-child { padding: 32px 0 40px; border-right: 0; border-bottom: 1px solid var(--bone-line); }
   .service:last-child { border-bottom: 0; }
@@ -183,6 +216,7 @@ a:hover { color: var(--red-dark); }
   .brand__name { font-size: 21px; }
   .brand__tag { display: none; }
   .nav .btn { min-height: 44px; padding: 0 16px; font-size: 14px; }
+  .page-hero .wrap { padding-top: 64px; padding-bottom: 64px; }
   .hero__eyebrow { font-size: 11px; letter-spacing: 0.16em; }
   .pillars { grid-template-columns: minmax(0, 1fr); }
   .trades li { gap: 14px; }
