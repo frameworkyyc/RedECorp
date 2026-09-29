@@ -247,13 +247,19 @@ a:hover { color: var(--red-dark); }
 .page-hero__rig { width: min(100%, 1180px); margin: 16px 0 0 auto; }
 .page-hero__vehicle { position: relative; animation: drive-in 1.6s cubic-bezier(0.22, 0.8, 0.24, 1) both; }
 .page-hero__graphic { display: block; width: 100%; max-width: none; height: auto; filter: invert(0.94); }
+.page-hero__wheel { position: absolute; height: auto; max-width: none; filter: invert(0.94); }
+.page-hero__wheel--truck { animation: wheel-truck 1.6s cubic-bezier(0.22, 0.8, 0.24, 1) both; }
+.page-hero__wheel--trailer { animation: wheel-trailer 1.6s cubic-bezier(0.22, 0.8, 0.24, 1) both; }
 .page-hero__cargo { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .page-hero__cargo .box { fill: #F0F0F0; }
 .page-hero__cargo .cut { fill: none; stroke: var(--charcoal); stroke-width: 4; }
 .page-hero__cargo .strap { fill: none; stroke: #F0F0F0; stroke-width: 7; stroke-linejoin: round; }
 .page-hero__cargo .buckle { fill: var(--charcoal); stroke: #F0F0F0; stroke-width: 4; }
-@keyframes drive-in { from { transform: translateX(-115vw); } to { transform: translateX(0); } }
-@media (prefers-reduced-motion: reduce) { .page-hero__vehicle { animation: none; } }
+/* the vehicle travels 1.1 rig-widths; each wheel turns distance / radius so it rolls without slipping */
+@keyframes drive-in { from { transform: translateX(-110%); } to { transform: translateX(0); } }
+@keyframes wheel-truck { from { transform: rotate(-1578deg); } to { transform: rotate(0deg); } }
+@keyframes wheel-trailer { from { transform: rotate(-2104deg); } to { transform: rotate(0deg); } }
+@media (prefers-reduced-motion: reduce) { .page-hero__vehicle, .page-hero__wheel { animation: none; } }
 
 /* responsive */
 @media (max-width: 1080px) {
