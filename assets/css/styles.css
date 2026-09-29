@@ -241,9 +241,11 @@ a:hover { color: var(--red-dark); }
 .credentials__photos figcaption { font-size: 12px; letter-spacing: 0.18em; color: var(--steel); }
 .taglist small { display: block; margin-top: 4px; font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel); }
 
-/* hot shot hero: truck graphic sits on the cream section below */
+/* hot shot hero: heading sits on the trailer deck, truck rests on the cream section below */
 .page-hero--graphic .wrap { padding-bottom: 0; gap: 24px; }
-.page-hero__graphic { display: block; width: min(100%, 1180px); max-width: none; height: auto; margin: 16px 0 0 auto; filter: invert(0.94); }
+.page-hero__rig { position: relative; container-type: inline-size; width: min(100%, 1180px); margin: 16px 0 0 auto; }
+.page-hero__graphic { display: block; width: 100%; max-width: none; height: auto; filter: invert(0.94); }
+.page-hero--graphic .page-hero__rig h1 { position: absolute; left: 1%; width: 41%; bottom: 38%; margin: 0; font-size: 6.9cqw; line-height: 0.92; text-align: center; max-width: none; }
 
 /* responsive */
 @media (max-width: 1080px) {
@@ -276,6 +278,7 @@ a:hover { color: var(--red-dark); }
   .page-hero .wrap { padding-top: 64px; padding-bottom: 64px; }
   .page-hero--graphic .wrap { padding-bottom: 0; }
   .page-hero h1 { font-size: clamp(32px, 10vw, 46px); overflow-wrap: anywhere; }
+  .page-hero--graphic .page-hero__rig h1 { font-size: 6.9cqw; overflow-wrap: normal; }
   .hero__eyebrow { font-size: 11px; letter-spacing: 0.16em; }
   .pillars { grid-template-columns: minmax(0, 1fr); }
   .trades li { gap: 14px; }
