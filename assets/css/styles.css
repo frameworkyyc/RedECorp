@@ -348,6 +348,12 @@ a:hover { color: var(--red-dark); }
 .project-item__link:hover { text-decoration: underline; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
+/* landing, desktop: logo dominant, wordmark smaller */
+@media (min-width: 900px) {
+  .landing__logo img { height: clamp(220px, 46vh, 440px); }
+  .landing__name { font-size: clamp(40px, 4.6vw, 68px); }
+}
+
 /* responsive */
 @media (max-width: 1280px) {
   .nav { gap: 24px; }
