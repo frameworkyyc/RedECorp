@@ -251,6 +251,7 @@ a:hover { color: var(--red-dark); }
 /* hot shot hero: vehicle drives in once and rests on the cream section below */
 .page-hero--graphic { overflow: hidden; }
 .page-hero--graphic .wrap { padding-bottom: 0; gap: 24px; }
+.page-hero--graphic .page-hero__blurb { margin-top: -8px; font-size: 21px; }
 .page-hero__rig { width: min(100%, 1180px); margin: 16px 0 0 auto; }
 .page-hero__vehicle, .page-hero__ride { position: relative; }
 .page-hero__graphic { display: block; width: 100%; max-width: none; height: auto; filter: invert(0.94); }
