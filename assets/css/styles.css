@@ -245,7 +245,6 @@ a:hover { color: var(--red-dark); }
 .credentials__photos figure { margin: 0; display: flex; flex-direction: column; gap: 14px; }
 .credentials__photos img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: var(--photo); }
 .credentials__photos figcaption { font-size: 12px; letter-spacing: 0.18em; color: var(--steel); }
-.taglist small { display: block; margin-top: 4px; font-family: var(--mono); font-weight: 500; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel); }
 
 /* hot shot hero: vehicle drives in once and rests on the cream section below */
 .page-hero--graphic { overflow: hidden; }
