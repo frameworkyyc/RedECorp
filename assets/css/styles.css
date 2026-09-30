@@ -179,7 +179,7 @@ a:hover { color: var(--red-dark); }
 .hero-service:hover .hero-service__go, .hero-service:focus-visible .hero-service__go { color: var(--bone); }
 
 /* service pages */
-.nav a[aria-current="page"] { color: var(--bone); border-bottom: 2px solid var(--red-on-dark); padding-bottom: 4px; }
+.nav a[aria-current] { color: var(--bone); border-bottom: 2px solid var(--red-on-dark); padding-bottom: 4px; }
 .page-hero { background: var(--charcoal); }
 .page-hero .wrap { display: flex; flex-direction: column; gap: 24px; padding-top: 96px; padding-bottom: 96px; }
 .page-hero .label { color: #D9D4CB; }
