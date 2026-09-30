@@ -192,10 +192,12 @@ a:hover { color: var(--red-dark); }
 .service-detail__icon svg { width: 48px; height: 48px; }
 .checklist { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--charcoal); }
 .checklist li { padding: 20px 0; border-bottom: 1px solid var(--bone-line); font-family: var(--display); font-weight: 700; font-size: 24px; line-height: 1.2; }
-.equipment { padding: 0 0 var(--section); }
+.equipment { padding: var(--section) 0; }
 .equipment .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 80px; align-items: start; }
 .equipment .wrap > div { display: flex; flex-direction: column; gap: 20px; }
 .equipment .label { color: var(--red); }
+.equipment__photo { grid-column: 1 / -1; margin: 16px 0 0; }
+.equipment__photo img { display: block; width: 100%; height: auto; aspect-ratio: 2200 / 1228; object-fit: cover; background: var(--photo); }
 .specs { margin: 0; border-top: 2px solid var(--charcoal); }
 .specs > div { display: flex; flex-direction: column; gap: 6px; padding: 20px 0; border-bottom: 1px solid var(--bone-line); }
 .specs dt { font-family: var(--mono); font-weight: 500; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--steel); }
@@ -249,22 +251,37 @@ a:hover { color: var(--red-dark); }
 /* hot shot hero: vehicle drives in once and rests on the cream section below */
 .page-hero--graphic { overflow: hidden; }
 .page-hero--graphic .wrap { padding-bottom: 0; gap: 24px; }
+.page-hero--graphic .page-hero__blurb { margin-top: -8px; font-size: 21px; }
 .page-hero__rig { width: min(100%, 1180px); margin: 16px 0 0 auto; }
-.page-hero__vehicle { position: relative; animation: drive-in 1.6s cubic-bezier(0.22, 0.8, 0.24, 1) both; }
+.page-hero__vehicle, .page-hero__ride { position: relative; }
 .page-hero__graphic { display: block; width: 100%; max-width: none; height: auto; filter: invert(0.94); }
 .page-hero__wheel { position: absolute; height: auto; max-width: none; filter: invert(0.94); }
-.page-hero__wheel--truck { animation: wheel-truck 1.6s cubic-bezier(0.22, 0.8, 0.24, 1) both; }
-.page-hero__wheel--trailer { animation: wheel-trailer 1.6s cubic-bezier(0.22, 0.8, 0.24, 1) both; }
+.page-hero__wheel { will-change: transform; }
 .page-hero__cargo { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .page-hero__cargo .box { fill: #F0F0F0; }
 .page-hero__cargo .cut { fill: none; stroke: var(--charcoal); stroke-width: 4; }
 .page-hero__cargo .strap { fill: none; stroke: #F0F0F0; stroke-width: 7; stroke-linejoin: round; }
 .page-hero__cargo .buckle { fill: var(--charcoal); stroke: #F0F0F0; stroke-width: 4; }
-/* the vehicle travels 1.1 rig-widths; each wheel turns distance / radius so it rolls without slipping */
+/* Animation is switched on by script (.is-animated) so the no-JS and reduced-motion views stay static.
+   The vehicle rolls in once, then keeps "driving in place": wheels spin steadily (the trailer's smaller
+   wheels a third faster so both match ground speed) and the whole rig hits an occasional small bump. */
+.is-animated .page-hero__vehicle { animation: drive-in 1.8s cubic-bezier(0.22, 0.8, 0.24, 1) both; }
+.is-animated .page-hero__ride { animation: road-bumps 7s ease-in-out 2.4s infinite; }
+.is-animated .page-hero__wheel--truck { animation: wheel-spin 0.85s linear infinite; }
+.is-animated .page-hero__wheel--trailer { animation: wheel-spin 0.64s linear infinite; }
+.is-animated.is-paused .page-hero__vehicle, .is-animated.is-paused .page-hero__ride, .is-animated.is-paused .page-hero__wheel { animation-play-state: paused; }
 @keyframes drive-in { from { transform: translateX(-110%); } to { transform: translateX(0); } }
-@keyframes wheel-truck { from { transform: rotate(-1578deg); } to { transform: rotate(0deg); } }
-@keyframes wheel-trailer { from { transform: rotate(-2104deg); } to { transform: rotate(0deg); } }
-@media (prefers-reduced-motion: reduce) { .page-hero__vehicle, .page-hero__wheel { animation: none; } }
+@keyframes wheel-spin { to { transform: rotate(360deg); } }
+@keyframes road-bumps {
+  0%, 18% { transform: translateY(0); }
+  20% { transform: translateY(-0.45%); }
+  23% { transform: translateY(0); }
+  25% { transform: translateY(-0.25%); }
+  28%, 66% { transform: translateY(0); }
+  68% { transform: translateY(-0.35%); }
+  72%, 100% { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) { .is-animated .page-hero__vehicle, .is-animated .page-hero__ride, .is-animated .page-hero__wheel { animation: none; } }
 
 /* landing page */
 .landing-body { background: var(--charcoal); }

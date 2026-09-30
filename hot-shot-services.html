@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hot Shot Services | Red E Corp. | Northwestern BC</title>
-<meta name="description" content="Time-critical delivery of parts, equipment and materials to site, so a shutdown or schedule doesn't stall waiting on freight.">
+<meta name="description" content="Hot shot services from Red E Corp.: a 2023 Ford F-350 with a 6.7L Power Stroke diesel and a 20-foot flat-deck trailer.">
 <meta name="theme-color" content="#17181A">
 <link rel="canonical" href="https://redecorp.ca/hot-shot-services.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Red E Corp.">
 <meta property="og:title" content="Hot Shot Services | Red E Corp.">
-<meta property="og:description" content="Time-critical hauling of parts, equipment and materials to job sites in Northwestern BC, when waiting on a standard freight run isn't an option.">
+<meta property="og:description" content="A 2023 Ford F-350 with a 6.7L Power Stroke diesel and a 20-foot flat-deck trailer.">
 <meta property="og:url" content="https://redecorp.ca/hot-shot-services.html">
 <meta property="og:image" content="https://redecorp.ca/assets/img/favicon-512.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
@@ -47,8 +47,10 @@
     <div class="wrap">
       <p class="label">Service 02</p>
       <h1>Hot Shot Services</h1>
+      <p class="page-hero__blurb">Hot shot hauling with a 2023 Ford F-350 and a 20-foot flat-deck trailer.</p>
       <div class="page-hero__rig">
         <div class="page-hero__vehicle">
+        <div class="page-hero__ride">
           <img class="page-hero__graphic" src="assets/img/hotshot-body.png" alt="Ford F-350 pickup with headache rack, light bar and beacon, hauling a flat deck trailer loaded with strapped-down boxes" width="2153" height="439">
           <img class="page-hero__wheel page-hero__wheel--trailer" src="assets/img/hotshot-wheel-trailer-a.png" alt="" width="132" height="132" style="left:10.4970%;top:68.7927%;width:6.1310%;transform-origin:50.000% 50.379%">
           <img class="page-hero__wheel page-hero__wheel--trailer" src="assets/img/hotshot-wheel-trailer-b.png" alt="" width="132" height="132" style="left:17.4176%;top:68.7927%;width:6.1310%;transform-origin:50.000% 50.379%">
@@ -76,22 +78,38 @@
           </g>
         </svg>
         </div>
+        </div>
       </div>
     </div>
   </section>
 
-    <section class="construction">
+  <section class="equipment">
     <div class="wrap">
-      <div class="construction__bar" aria-hidden="true"></div>
-      <div class="construction__body">
-        <p class="label">Coming soon</p>
-        <h2 class="h2">Under construction</h2>
-        <p class="lead">We're building this page out and it will be back soon. In the meantime, get in touch and you'll hear back from the person who'll actually run the job.</p>
-        <div class="construction__actions">
-          <a class="btn btn--lg" href="contact.html?service=hot-shot">Start a Conversation</a>
-          <a href="tel:+12506839002">(250) 683-9002</a>
-          <a href="mailto:john.brick@redecorp.ca">john.brick@redecorp.ca</a>
-        </div>
+      <div>
+        <p class="label">The equipment</p>
+        <h2 class="h2">Truck and trailer.</h2>
+      </div>
+      <dl class="specs">
+        <div><dt>Truck</dt><dd>2023 Ford F-350 &middot; 6.7L Power Stroke diesel</dd></div>
+        <div><dt>Trailer</dt><dd>20-foot flat-deck trailer</dd></div>
+      </dl>
+      <figure class="equipment__photo">
+        <img src="assets/img/hotshot-f350.jpg" alt="Black Ford F-350 pickup with a headache rack, light bar and beacon, towing a flat-deck trailer with snow-covered mountains behind" width="2200" height="1228" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact__text">
+        <p class="label">Red E 4 Anything.</p>
+        <h2>Tell us what the job takes.</h2>
+        <p>Call, email, or send a few lines about the project. You'll hear back from the person who'll actually run it.</p>
+      </div>
+      <div class="contact__actions">
+        <a class="btn btn--lg" href="contact.html?service=hot-shot">Start a Conversation</a>
+        <a href="tel:+12506839002">(250) 683-9002</a>
+        <a href="mailto:john.brick@redecorp.ca">JOHN.BRICK@REDECORP.CA</a>
       </div>
     </div>
   </section>
@@ -134,5 +152,28 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var hero = document.querySelector('.page-hero--graphic');
+  if (!hero) return;
+  var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var inView = true;
+  function sync() { hero.classList.toggle('is-paused', !inView || document.hidden); }
+  function enable() {
+    if (mq.matches) { hero.classList.remove('is-animated', 'is-paused'); return; }
+    hero.classList.add('is-animated', 'is-paused');
+    sync();
+  }
+  enable();
+  if (mq.addEventListener) mq.addEventListener('change', enable);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      inView = entries[entries.length - 1].isIntersecting;
+      sync();
+    }, { threshold: 0.05 }).observe(hero);
+  }
+  document.addEventListener('visibilitychange', sync);
+})();
+</script>
 </body>
 </html>
