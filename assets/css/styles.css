@@ -367,6 +367,14 @@ a:hover { color: var(--red-dark); }
 .project-item__meta dt { font-family: var(--mono); font-weight: 500; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--steel); }
 .project-item__meta dd { margin: 0; color: var(--text); }
 
+/* project cards: align rows across the three cards where subgrid is supported */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 861px) {
+    .project-item { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 14px; }
+    .project-item__link { margin-top: 0; align-self: end; }
+  }
+}
+
 /* responsive */
 @media (max-width: 1280px) {
   .nav { gap: 24px; }
