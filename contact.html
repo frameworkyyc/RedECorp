@@ -70,7 +70,7 @@
         <div class="field">
           <label for="service">Service</label>
           <select id="service" name="Service">
-            <option value="Consulting">Consulting</option>
+            <option value="Consulting &amp; Project Management">Consulting &amp; Project Management</option>
             <option value="Hot Shot Services">Hot Shot Services</option>
             <option value="Something else">Something else</option>
           </select>
@@ -113,7 +113,7 @@
         <div>
           <span class="label">Services</span>
           <a href="products-services.html">All Products &amp; Services</a>
-          <a href="consulting.html">Consulting</a><a href="hot-shot-services.html">Hot Shot Services</a>
+          <a href="consulting.html">Consulting &amp; Project Management</a><a href="hot-shot-services.html">Hot Shot Services</a>
           <a href="projects.html">Projects</a>
           <a href="gallery.html">Gallery</a>
         </div>
@@ -137,7 +137,7 @@
 (function () {
   var form = document.getElementById('contact-form');
   var select = document.getElementById('service');
-  var map = { 'consulting': 'Consulting', 'hot-shot': 'Hot Shot Services' };
+  var map = { 'consulting': 'Consulting & Project Management', 'hot-shot': 'Hot Shot Services' };
   var q = new URLSearchParams(location.search).get('service');
   if (q && map[q]) select.value = map[q];
   form.addEventListener('submit', function (e) {
