@@ -1,7 +1,7 @@
 /* Red E Corp. — site styles (Brand System v1.0) */
 /* Fonts: Cinzel (wordmark and major headings), Alegreya (sub-headings) and Alegreya Sans (text), SIL Open Font License 1.1, self-hosted from assets/fonts */
-@font-face { font-family: "Cinzel"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/cinzel-latin-400-normal.woff2") format("woff2"); }
 @font-face { font-family: "Cinzel"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/cinzel-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Alegreya"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/alegreya-latin-500-normal.woff2") format("woff2"); }
 @font-face { font-family: "Alegreya"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/alegreya-latin-700-normal.woff2") format("woff2"); }
 @font-face { font-family: "Alegreya"; font-style: normal; font-weight: 800; font-display: swap; src: url("../fonts/alegreya-latin-800-normal.woff2") format("woff2"); }
 @font-face { font-family: "Alegreya Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/alegreya-sans-latin-400-normal.woff2") format("woff2"); }
@@ -62,7 +62,7 @@ a:hover { color: var(--red-dark); }
 .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 .brand img { height: 50px; width: auto; }
 .brand__text { display: flex; flex-direction: column; gap: 5px; }
-.brand__name { font-family: var(--wordmark); font-weight: 400; font-size: 25px; line-height: 1; color: var(--bone); letter-spacing: 0.06em; }
+.brand__name { font-family: var(--display); font-weight: 500; font-size: 25px; letter-spacing: 0.04em; line-height: 1; color: var(--bone); }
 .brand__tag { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: 0.22em; line-height: 1; color: var(--muted-on-dark); }
 .nav { display: flex; align-items: center; gap: 36px; }
 .nav a:not(.btn) { font-family: var(--mono); font-size: 15px; letter-spacing: 0.16em; text-transform: uppercase; color: #D9D4CB; text-decoration: none; }
@@ -292,7 +292,7 @@ a:hover { color: var(--red-dark); }
 .landing__inner { display: flex; flex-direction: column; align-items: center; gap: clamp(36px, 7vh, 64px); width: 100%; }
 .landing__logo { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 0; font-weight: 400; }
 .landing__logo img { width: auto; height: clamp(170px, 34vh, 320px); margin-bottom: clamp(0px, 1vh, 8px); filter: drop-shadow(0 0 1.5px rgba(245,241,234,0.95)) drop-shadow(0 0 14px rgba(245,241,234,0.22)); }
-.landing__name { font-family: var(--wordmark); font-weight: 400; font-size: clamp(48px, 9vw, 112px); line-height: 0.95; text-transform: uppercase; letter-spacing: 0.06em; }
+.landing__name { font-family: var(--display); font-weight: 500; font-size: clamp(48px, 9vw, 112px); line-height: 0.95; letter-spacing: 0.04em; text-transform: uppercase; }
 .landing__tag { margin-top: 14px; font-family: var(--mono); font-weight: 500; font-size: clamp(12px, 1.4vw, 16px); letter-spacing: 0.28em; text-transform: uppercase; color: #D9D4CB; }
 .landing__links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px 20px; width: 100%; }
 .landing__links .btn { min-width: 260px; }
